@@ -1,0 +1,9 @@
+{
+    "r2_bucket": "anji-dev",
+    "r2_key": "anji-dev",
+    "r2_url":"https://8e1a50256baae80dd96d77f4111bbb50.r2.cloudflarestorage.com/anji-dev",
+    "R2_ACCOUNT_ID":"8e1a50256baae80dd96d77f4111bbb50",
+    "R2_TOKEN":"6RrOs84XYJMHjPyKV9l77NiP1QgZgC9JqA-zzwHz",
+    "R2_ACCESS_KEY_ID":"7619d38bcc273274b0cb74131a72080d",
+    "R2_SECRET_ACCESS_KEY":"a94d0aacdc7d7ae9fe8f0ef1d5f951cd616fe569cc52582d74f53e1bceae5097"
+}
