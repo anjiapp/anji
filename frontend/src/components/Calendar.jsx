@@ -7,7 +7,7 @@ export default function Calendar() {
     }
 
     return (
-        <div className={'bg-[#d9d9d9] py-2 px-1 gap-x-0.5 gap-y-1 grid grid-flow-col'} style={{gridTemplateRows: 'repeat(7, 1fr)'}} role={'grid'}>
+        <div className={'bg-[#d9d9d9] py-2 px-2 gap-x-0.5 gap-y-1 h-[15vh] grid grid-flow-col'} style={{gridTemplateRows: 'repeat(7, 1fr)'}} role={'grid'}>
             {
                 calendarData.map((value, index) => {
                     return (
