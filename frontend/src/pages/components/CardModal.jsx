@@ -1,5 +1,6 @@
 import '../css/CardModal.css';
 import {Link} from 'react-router-dom';
+import { MdOutlineClose } from "react-icons/md";
 
 const boxes = [];
 export default function CardModal(props) {
@@ -18,7 +19,12 @@ export default function CardModal(props) {
             <div
                 className={'card-modal'}>
                 <div className={'card-info space-y-2'}>
-                    <h1>{props.title}</h1>
+                    <div className={"flex flex-row justify-between items-center"}>
+                        <h1>{props.title}</h1>
+                        <MdOutlineClose size={40} className={'close-button hover:cursor-pointer h-full'} onClick={() => {
+                            props.setIsDeckOpen(false);
+                        }}/>
+                    </div>
                     <div className={"deck-stats space-x-10"}>
                         <div>
                             <p>new</p>
