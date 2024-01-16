@@ -25,16 +25,16 @@ export default function CardModal(props) {
                             props.setIsDeckOpen(false);
                         }}/>
                     </div>
-                    <div className={"deck-stats space-x-10"}>
-                        <div>
+                    <div className={"deck-stats-container space-x-5"}>
+                        <div className={"deck-stats-text-container"}>
                             <p>new</p>
                             <p>10</p>
                         </div>
-                        <div>
+                        <div className={'deck-stats-text-container'}>
                             <p>in progress</p>
                             <p>0</p>
                         </div>
-                        <div>
+                        <div className={'deck-stats-text-container !border-none'}>
                             <p>review</p>
                             <p>100</p>
                         </div>

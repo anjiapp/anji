@@ -31,13 +31,21 @@
     justify-content: space-between;
 }
 
-.deck-stats {
+.deck-stats-container {
     display: flex;
     flex-direction: row;
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 1.75rem;
     text-align: right;
+}
+
+.deck-stats-text-container {
+    padding: 0 1.25rem;
+    border-right-color: black;
+    border-right-style: solid;
+    border-right-width: 2px;
+
 }
 
 .deck-bottom-container {
