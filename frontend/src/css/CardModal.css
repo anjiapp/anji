@@ -1,0 +1,89 @@
+.blanket {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 50%;
+}
+
+.card-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 101;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 60vh;
+    background-color: white;
+    border-radius: .75rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.deck-stats {
+    display: flex;
+    flex-direction: row;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-align: right;
+}
+
+.deck-bottom-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+.deck-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #d9d9d9;
+    width: 50%;
+}
+
+.deck-grid-box {
+    border: 1px solid black;
+    aspect-ratio: 1 / 1;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 35%;
+}
+
+.deck-buttons-container {
+    display: flex;
+    flex-direction: row;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.study-button {
+    background-color: black;
+    color: white;
+    border-radius: .75rem;
+    width: 100%;
+    aspect-ratio: 6 / 1;
+    padding: 1.25rem .75rem;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 800;
+}

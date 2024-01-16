@@ -1,3 +1,5 @@
+import '../css/CardModal.css';
+
 const boxes = [];
 export default function CardModal(props) {
     if (boxes.length === 0) {
@@ -8,43 +10,48 @@ export default function CardModal(props) {
     return (
         <>
             <div
-                className={"absolute !mt-0 top-0 left-0 w-screen h-screen bg-black opacity-50 flex items-center justify-center"}
+                className={"blanket"}
                 onClick={() => {
                     props.setIsDeckOpen(false);
                 }}/>
             <div
-                className={'bg-white rounded-xl opacity-100 h-[60vh] w-[50vw] p-10 absolute border-black border flex flex-col'}>
-                <h1>{props.title}</h1>
-                <div className={"flex flex-row font-bold text-lg space-x-10 text-right"}>
-                    <div>
-                        <p>new</p>
-                        <p>10</p>
-                    </div>
-                    <div>
-                        <p>in progress</p>
-                        <p>0</p>
-                    </div>
-                    <div>
-                        <p>review</p>
-                        <p>100</p>
+                className={'card-modal'}>
+                <div className={'card-info space-y-2'}>
+                    <h1>{props.title}</h1>
+                    <div className={"deck-stats space-x-10"}>
+                        <div>
+                            <p>new</p>
+                            <p>10</p>
+                        </div>
+                        <div>
+                            <p>in progress</p>
+                            <p>0</p>
+                        </div>
+                        <div>
+                            <p>review</p>
+                            <p>100</p>
+                        </div>
                     </div>
                 </div>
-                <div className={"mt-auto mb-0 flex items-baseline justify-between"}>
-                    <div className={"grid grid-cols-7 bg-[#d9d9d9] w-[50%]"}>
+                <div className={"deck-bottom-container"}>
+                    <div className={"deck-grid"}>
                         {
                             boxes.map((box, index) => {
                                 return (
-                                    <div key={index} className={"border border-black aspect-square"}/>
+                                    <div key={index} className={"deck-grid-box"}/>
                                 );
                             })
                         }
                     </div>
-                    <div className={'self-end flex items-end flex-col space-y-10 w-[35%]'}>
-                        <div className={'space-x-4 flex flex-row font-bold text-xl'}>
+                    <div className={'buttons-container space-y-10'}>
+                        <div className={'deck-buttons-container space-x-4'}>
                             <button>ADD</button>
                             <button>EDIT</button>
                         </div>
-                        <button className={'bg-black text-white rounded-xl w-full aspect-[6/1] px-5 py-3 text-3xl font-extrabold'}>Study Now</button>
+                        <button
+                            className={'study-button'}>Study
+                            Now
+                        </button>
                     </div>
                 </div>
             </div>
