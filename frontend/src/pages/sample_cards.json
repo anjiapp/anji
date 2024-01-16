@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What is the capital of the United States?",
+    "choices": [
+      "New York",
+      "Washington D.C.",
+      "Los Angeles",
+      "San Francisco"
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "What is the capital of the United Kingdom?",
+    "choices": [
+      "London",
+      "Manchester",
+      "Liverpool",
+      "Birmingham"
+    ],
+    "correctAnswer": 0
+  }
+]

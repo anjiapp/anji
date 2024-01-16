@@ -7,7 +7,7 @@ import {useState} from "react";
 import './css/Dashboard.css'
 
 const cardTitles = ["Philosophy", "Biology", "Japanese", "Calculus", "Chemistry", "French"];
-export default function Dashboard(props) {
+export default function Dashboard() {
     const [isDeckOpen, setIsDeckOpen] = useState(false);
     const [openDeck, setOpenDeck] = useState(''); // Use Deck id later for scaling
 
@@ -51,7 +51,7 @@ export default function Dashboard(props) {
             </div>
             {
                 isDeckOpen &&
-                <CardModal title={openDeck} setIsDeckOpen={setIsDeckOpen} setPage={props.setPage} />
+                <CardModal title={openDeck} setIsDeckOpen={setIsDeckOpen} />
             }
         </div>
     );

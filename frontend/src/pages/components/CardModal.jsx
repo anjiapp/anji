@@ -1,4 +1,5 @@
 import '../css/CardModal.css';
+import {Link} from 'react-router-dom';
 
 const boxes = [];
 export default function CardModal(props) {
@@ -48,9 +49,9 @@ export default function CardModal(props) {
                             <button>ADD</button>
                             <button>EDIT</button>
                         </div>
-                        <button onClick={() => props.setPage(props.title)}
+                        <Link to={'/deck'} state={{ title: props.title }}
                             className={'study-button'}>Study Now
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
