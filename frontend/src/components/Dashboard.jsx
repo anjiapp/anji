@@ -12,7 +12,7 @@ export default function Dashboard() {
     const [openDeck, setOpenDeck] = useState(''); // Use Deck id later for scaling
 
     return (
-        <>
+        <div className={'flex items-center w-full h-full justify-center'}>
             <div className={'w-[80%] space-y-3'}>
                 <div className={'flex justify-between'}>
                     <div>
@@ -53,6 +53,6 @@ export default function Dashboard() {
                 isDeckOpen &&
                 <CardModal title={openDeck} setIsDeckOpen={setIsDeckOpen} />
             }
-        </>
+        </div>
     );
 }

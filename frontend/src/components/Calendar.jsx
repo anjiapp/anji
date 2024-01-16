@@ -28,7 +28,7 @@ export default function Calendar() {
                     })
                 }
             </div>
-            <p className={'text-center'}>{year}</p>
+            <p className={'text-center font-medium text-lg'}>{year}</p>
         </div>
     );
 }
