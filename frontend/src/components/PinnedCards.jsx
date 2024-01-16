@@ -1,7 +1,8 @@
 export default function PinnedCards(props) {
     return (
         <div className={'bg-[#d9d9d9] h-[20vh] hover:cursor-pointer rounded-xl flex border-black border-1 border'} onClick={() => {
-
+            props.setOpenDeck(props.title);
+            props.setIsDeckOpen(true);
         }}>
             <div className={'inline-block self-end w-full py-2 px-4 bg-white'}
             style={{
