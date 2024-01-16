@@ -29,14 +29,6 @@ export default function Dashboard() {
                     </div>
                 </div>
                 <Calendar/>
-                {/*<div*/}
-                {/*    className={'bg-[#d9d9d9] py-3 px-5 inline-flex flex-row items-center space-x-2 font-bold hover:cursor-pointer'}*/}
-                {/*    onClick={() => {*/}
-
-                {/*    }}>*/}
-                {/*    <FaPlus/>*/}
-                {/*    <p>New</p>*/}
-                {/*</div>*/}
                 <h2 className={'text-2xl font-bold'}>DECKS</h2>
                 <div className={'flex flex-wrap gap-y-5 justify-between'}>
                     {
