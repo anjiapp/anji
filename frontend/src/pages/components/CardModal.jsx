@@ -49,8 +49,8 @@ export default function CardModal(props) {
                             <button>ADD</button>
                             <button>EDIT</button>
                         </div>
-                        <Link to={'/deck'} state={{ title: props.title }}
-                            className={'study-button'}>Study Now
+                        <Link to={'/deck'} state={{title: props.title}}
+                              className={'study-button'}>Study Now
                         </Link>
                     </div>
                 </div>

@@ -1,15 +1,13 @@
 import './pages/css/App.css';
 import Dashboard from "./pages/Dashboard";
 import StudyPage from "./pages/StudyPage";
-import {useState} from "react";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
-    const [page, setPage] = useState(0);
     return (
         <div className={'h-screen overflow-hidden relative flex flex-row'}>
-            <div className={""}> {/*Create Sidebar here*/}
-                <h1 className={"mt-4 ml-8"}>anji</h1>
+            <div className={"py-4 px-8 border-gray-500 border-r-[2px]"}> {/*Create Sidebar here*/}
+                <h1>anji</h1>
             </div>
             <Router>
                 <Routes>
