@@ -8,7 +8,7 @@ function App() {
     return (
         <div className={'h-screen overflow-hidden relative flex flex-row'}>
             <Router>
-                <div className={"w-[15vw] py-4 px-8 border-gray-500 border-r-[2px] overflow-y-auto"}> {/*Create Sidebar here*/}
+                <div className={"py-4 px-2 border-gray-500 border-r-[2px] overflow-y-auto"}> {/*Create Sidebar here*/}
                     <Link to={'/'}>
                         <h1>anji</h1>
                     </Link>
