@@ -17,7 +17,9 @@ export default function Calendar() {
                         return (
                             <div key={index}
                                  onMouseEnter={() => console.log(value)}
-                                 className={`${value > 10 ? 'bg-green-500' : 'bg-white'} calendar-day`}>
+                                 className={`calendar-day`} style={{
+                                     backgroundColor: `rgb(0, ${255-(value/100.0)*200}, 0)`
+                            }}>
                                 <div className={'calendar-day-text'}> {/*Change to a tooltip later*/}
                                     <p className={'text-center'}>{value}</p>
                                 </div>

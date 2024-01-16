@@ -38,7 +38,7 @@ export default function Dashboard() {
                 {/*    <p>New</p>*/}
                 {/*</div>*/}
                 <h2 className={'text-2xl font-bold'}>DECKS</h2>
-                <div className={'grid grid-cols-3 gap-x-5 gap-y-7'}>
+                <div className={'flex flex-wrap gap-y-5 justify-between'}>
                     {
                         cardTitles.map((title, index) => {
                             return (
