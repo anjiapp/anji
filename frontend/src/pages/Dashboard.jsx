@@ -1,13 +1,13 @@
 import {FaPlus} from "react-icons/fa6";
-import PinnedCards from "./PinnedCards";
-import Calendar from "./Calendar";
-import CardModal from "./CardModal";
+import PinnedCards from "./components/PinnedCards";
+import Calendar from "./components/Calendar";
+import CardModal from "./components/CardModal";
 import {useState} from "react";
 
-import '../css/Dashboard.css'
+import './css/Dashboard.css'
 
 const cardTitles = ["Philosophy", "Biology", "Japanese", "Calculus", "Chemistry", "French"];
-export default function Dashboard() {
+export default function Dashboard(props) {
     const [isDeckOpen, setIsDeckOpen] = useState(false);
     const [openDeck, setOpenDeck] = useState(''); // Use Deck id later for scaling
 
@@ -51,7 +51,7 @@ export default function Dashboard() {
             </div>
             {
                 isDeckOpen &&
-                <CardModal title={openDeck} setIsDeckOpen={setIsDeckOpen} />
+                <CardModal title={openDeck} setIsDeckOpen={setIsDeckOpen} setPage={props.setPage} />
             }
         </div>
     );

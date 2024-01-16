@@ -48,9 +48,8 @@ export default function CardModal(props) {
                             <button>ADD</button>
                             <button>EDIT</button>
                         </div>
-                        <button
-                            className={'study-button'}>Study
-                            Now
+                        <button onClick={() => props.setPage(props.title)}
+                            className={'study-button'}>Study Now
                         </button>
                     </div>
                 </div>
