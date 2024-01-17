@@ -1,11 +1,10 @@
-import SampleCards from './sample_cards.json';
-import {useRouter} from "next/navigation";
-import Link from 'next/link';
-import Button from '../Button';
+'use client';
+import sample_cards from './sample_cards.json';
+import React from "react";
+import Link from "next/link";
+import '@/css/CardModal.css';
 
-import '../css/CardModal.css';
-
-const sampleCards = SampleCards;
+const sampleCards = sample_cards;
 const buttons = ['again', 'hard', 'good', 'easy'];
 const buttonStyle = {
     backgroundColor: 'white',
@@ -15,24 +14,11 @@ const buttonStyle = {
     marginBottom: '2.5rem',
 }
 
-export default function Study_page({ params, searchParams }) {
-    let index = 0;
-    let onFront = true;
-
-    const flipCard = async () => {
-        'use server';
-        onFront = false;
-    }
-
-    const nextCard = async () => {
-        'use server';
-        ++index;
-        onFront = false;
-    }
-
+const ModalChildren = ({}) => {
+    const [index, setIndex] = React.useState(0);
+    const [onFront, setOnFront] = React.useState(true);
     return (
-        <div className={'relative flex flex-col w-full h-full bg-[#d9d9d9] items-center'}>
-            <h2 className={"bg-white self-start w-full py-4 px-7"}>{searchParams?.title}</h2>
+        <>
             <div className={'card-modal'}>
                 {index === sampleCards.length ?
                     <>
@@ -52,13 +38,16 @@ export default function Study_page({ params, searchParams }) {
                 <div className={'absolute bottom-[5vh] self-center'}>
                     {
                         onFront ?
-                            <Button style={buttonStyle} action={flipCard}>Show Card</Button>
+                            <button style={buttonStyle} onClick={() => setOnFront(false)}>Show Card</button>
                             :
                             <div className={'grid grid-cols-4 gap-3'}>
                                 {
                                     buttons.map((button, i) => {
                                         return (
-                                            <Button key={i} style={buttonStyle} action={nextCard}>{button}</Button>
+                                            <button key={i} style={buttonStyle} onClick={() => {
+                                                setIndex(index + 1);
+                                                setOnFront(true);
+                                            }}>{button}</button>
                                         )
                                     })
                                 }
@@ -66,6 +55,7 @@ export default function Study_page({ params, searchParams }) {
                     }
                 </div>
             }
-        </div>
+        </>
     );
 }
+export default ModalChildren;

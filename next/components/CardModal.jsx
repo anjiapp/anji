@@ -1,7 +1,6 @@
-import '../../css/CardModal.css';
+import '@/css/CardModal.css';
 import Link from 'next/link';
 import { MdOutlineClose } from "react-icons/md";
-import Button from '../../Button';
 
 const boxes = [];
 export default function CardModal(props) {
@@ -53,8 +52,8 @@ export default function CardModal(props) {
                     </div>
                     <div className={'buttons-container space-y-10'}>
                         <div className={'deck-buttons-container space-x-4'}>
-                            <Button>ADD</Button>
-                            <Button>EDIT</Button>
+                            <button>ADD</button>
+                            <button>EDIT</button>
                         </div>
                         <Link href={{
                             pathname: '/deck',

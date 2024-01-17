@@ -1,11 +1,11 @@
 'use client';
 
-import PinnedCards from "./components/PinnedCards";
-import Calendar from "./components/Calendar";
-import CardModal from "./components/CardModal";
+import PinnedCards from "@/components/PinnedCards";
+import Calendar from "@/components/Calendar";
+import CardModal from "@/components/CardModal";
 import {useState} from "react";
 
-import '../css/Dashboard.css'
+import '@/css/Dashboard.css'
 
 const cardTitles = ["Philosophy", "Biology", "Japanese", "Calculus", "Chemistry", "French"];
 export default function Dashboard() {

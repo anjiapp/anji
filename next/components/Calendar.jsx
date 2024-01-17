@@ -1,4 +1,4 @@
-import '../../css/Calendar.css';
+import '@/css/Calendar.css';
 const calendarData = [];
 const year = 2024;
 
