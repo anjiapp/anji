@@ -1,4 +1,4 @@
-export default function PinnedCards(props) {
+export default function PinnedCard(props) {
     return (
         <div className={'bg-[#d9d9d9] w-[30%] aspect-[7/3] hover:cursor-pointer rounded-xl flex border-black border-1 border'} onClick={() => {
             props.setOpenDeck(props.title);

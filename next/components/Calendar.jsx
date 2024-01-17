@@ -1,6 +1,6 @@
+'use client';
 import '@/css/Calendar.css';
 const calendarData = [];
-const year = 2024;
 
 export default function Calendar() {
     if (calendarData.length === 0) {
@@ -10,7 +10,6 @@ export default function Calendar() {
     }
 
     return (
-        <div className={'bg-[#d9d9d9] pt-2'}>
             <div className={'calendar'}>
                 {
                     calendarData.map((value, index) => {
@@ -28,7 +27,5 @@ export default function Calendar() {
                     })
                 }
             </div>
-            <p className={'text-center font-medium text-lg'}>{year}</p>
-        </div>
     );
 }
