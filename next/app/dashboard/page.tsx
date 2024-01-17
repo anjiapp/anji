@@ -26,7 +26,7 @@ export default function Dashboard() {
                     <p className={'text-center font-medium text-lg'}>{year}</p>
                 </div>
                 <h2 className={'text-2xl font-bold'}>DECKS</h2>
-                <PinnedCards/>
+                <PinnedCards />
             </div>
         </div>
     );

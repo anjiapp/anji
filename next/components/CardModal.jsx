@@ -58,7 +58,7 @@ export default function CardModal(props) {
                         <Link href={{
                             pathname: '/deck',
                             query: {
-                                title: props.title
+                                id: 0
                             }
                         }}
                               className={'study-button'}>Study Now

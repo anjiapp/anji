@@ -1,10 +1,15 @@
 [
   {
-    "question": "What is the capital of the United States?",
-    "answer": "Washington, D.C."
-  },
-  {
-    "question": "What is the capital of the United Kingdom?",
-    "answer": "London"
+    "title": "Philosophy",
+    "deck": [
+      {
+        "question": "What is the capital of the United States?",
+        "answer": "Washington, D.C."
+      },
+      {
+        "question": "What is the capital of the United Kingdom?",
+        "answer": "London"
+      }
+    ]
   }
 ]

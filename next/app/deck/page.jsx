@@ -1,12 +1,13 @@
-import dynamic from 'next/dynamic'
+import sample_cards from "./sample_cards";
+import ModalChildren from "./ModalChildren";
 
-const Modal = dynamic(() => import('./ModalChildren'), {ssr: false});
-
-export default function Study_page({params, searchParams}) {
+export default async function StudyPage({params, searchParams}) {
+    const id = searchParams?.id;
+    const deck = sample_cards[id];
     return (
         <div className={'relative flex flex-col w-full h-full bg-[#d9d9d9] items-center'}>
-            <h2 className={"bg-white self-start w-full py-4 px-7"}>{searchParams?.title}</h2>
-            <Modal />
+            <h2 className={"bg-white self-start w-full py-4 px-7"}>{deck.title}</h2>
+            <ModalChildren sampleCards={deck.deck} />
         </div>
     );
 }

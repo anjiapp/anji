@@ -1,10 +1,8 @@
 'use client';
-import sample_cards from './sample_cards.json';
 import React from "react";
 import Link from "next/link";
 import '@/css/CardModal.css';
 
-const sampleCards = sample_cards;
 const buttons = ['again', 'hard', 'good', 'easy'];
 const buttonStyle = {
     backgroundColor: 'white',
@@ -14,7 +12,7 @@ const buttonStyle = {
     marginBottom: '2.5rem',
 }
 
-const ModalChildren = ({}) => {
+const ModalChildren = ({sampleCards}) => {
     const [index, setIndex] = React.useState(0);
     const [onFront, setOnFront] = React.useState(true);
     return (

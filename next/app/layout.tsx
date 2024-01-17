@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
         <html lang="en">
-        <body className={'h-screen overflow-hidden relative flex flex-row'}>
+        <body className={'h-screen relative flex flex-row'}>
         <div className={"py-4 px-2 border-gray-500 border-r-[2px] overflow-y-auto"}> {/*Create Sidebar here*/}
             <Link href={'/dashboard'}>
                 <h1>anji</h1>
