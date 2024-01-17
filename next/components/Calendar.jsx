@@ -1,4 +1,3 @@
-'use client';
 import '@/css/Calendar.css';
 const calendarData = [];
 
@@ -15,7 +14,6 @@ export default function Calendar() {
                     calendarData.map((value, index) => {
                         return (
                             <div key={index}
-                                 onMouseEnter={() => console.log(value)}
                                  className={`calendar-day`} style={{
                                      backgroundColor: `rgb(0, ${255-(value/100.0)*200}, 0)`
                             }}>
