@@ -1,7 +1,6 @@
 import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
 import './globals.css'
-import React from "react";
 import Link from "next/link";
 import {FaChevronDown, FaChevronRight, FaEllipsis, FaFolder, FaPlus} from "react-icons/fa6";
 
@@ -13,6 +12,13 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
+    /* Need to figure out folders data structure */
+    // const [folders, setFolders] = useState([]);
+
+    function handleFolders(someSortOfId) {
+        /* Find id in folders and update boolean value to show/hide tasks */
+    }
+
     return (
         <html lang="en">
         <body className={'h-screen relative flex flex-row'}>
@@ -26,9 +32,10 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
                 <FaPlus/>
                 <p> New</p>
             </Link>
+            {/* convert this section to a sidenav client component or else updates won't work */}
             <div className={'flex flex-col mt-6'}>
                 <div className={'bg-[#0000000D] py-1 px-3 inline-flex flex-row items-center space-x-2 font-bold rounded-l'}>
-                    <FaChevronDown className={'text-[x-small] font-black'}/>
+                    <button><FaChevronDown className={'text-[x-small] font-black'}/></button>
                     <FaFolder/>
                     <p className={'truncate'} >Selected Folder</p>
                     <span className={'flex-1 min-w-0'}></span>
