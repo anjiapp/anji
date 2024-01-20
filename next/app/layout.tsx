@@ -3,7 +3,7 @@ import {Inter} from 'next/font/google'
 import './globals.css'
 import React from "react";
 import Link from "next/link";
-import {FaPlus} from "react-icons/fa6";
+import {FaChevronDown, FaChevronRight, FaEllipsis, FaFolder, FaPlus} from "react-icons/fa6";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -26,17 +26,33 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
                 <FaPlus/>
                 <p> New</p>
             </Link>
-            <div className={'flex flex-col border-[solid] mt-6'}>
-                <Link
-                    className={'truncate'}
-                    href={'#'}>
-                    Placeholder decks
-                </Link>
-                <Link
-                    className={'truncate'}
-                    href={'#'}>
-                    Longer Deck Name Longer Deck Name Longer Deck Name Longer Deck Name
-                </Link>
+            <div className={'flex flex-col mt-6'}>
+                <div className={'bg-[#0000000D] py-1 px-3 inline-flex flex-row items-center space-x-2 font-bold rounded-l'}>
+                    <FaChevronDown className={'text-[x-small] font-black'}/>
+                    <FaFolder/>
+                    <p className={'truncate'} >Selected Folder</p>
+                    <span className={'flex-1 min-w-0'}></span>
+                    <FaEllipsis/>
+                </div>
+                <div className={'flex flex-col pl-7'}>
+                    <Link
+                        className={'truncate'}
+                        href={'#'}>
+                        Placeholder decks
+                    </Link>
+                    <Link
+                        className={'truncate'}
+                        href={'#'}>
+                        Longer Deck Name Longer Deck Name Longer Deck Name Longer Deck Name
+                    </Link>
+                </div>
+                <div className={'py-1 px-3 inline-flex flex-row items-center space-x-2 font-bold rounded-l'}>
+                    <FaChevronRight className={'text-[x-small] font-black'}/>
+                    <FaFolder/>
+                    <p className={'truncate'} >Tutorial</p>
+                    <span className={'flex-1 min-w-0'}></span>
+                    <FaEllipsis className={''}/>
+                </div>
             </div>
         </div>
         {
