@@ -16,7 +16,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
         <html lang="en">
         <body className={'h-screen relative flex flex-row'}>
-        <div className={"py-4 px-2 border-gray-500 border-r-[2px] overflow-y-auto"}> {/*Create Sidebar here*/}
+        <div className={"py-4 px-2 border-gray-500 border-r-[2px] overflow-y-auto w-[250px]"}> {/*Create Sidebar here*/}
             <Link href={'/dashboard'}>
                 <h1>anji</h1>
             </Link>
@@ -26,6 +26,18 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
                 <FaPlus/>
                 <p> New</p>
             </Link>
+            <div className={'flex flex-col border-[solid] mt-6'}>
+                <Link
+                    className={'truncate'}
+                    href={'#'}>
+                    Placeholder decks
+                </Link>
+                <Link
+                    className={'truncate'}
+                    href={'#'}>
+                    Longer Deck Name Longer Deck Name Longer Deck Name Longer Deck Name
+                </Link>
+            </div>
         </div>
         {
             children
