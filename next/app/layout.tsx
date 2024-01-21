@@ -23,15 +23,17 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         <html lang="en">
         <body className={'h-screen relative flex flex-row'}>
         <div className={"py-4 px-2 border-gray-500 border-r-[2px] overflow-y-auto w-[250px]"}> {/*Create Sidebar here*/}
-            <Link href={'/dashboard'}>
+            <Link href={'/dashboard'} className={'text-center'}>
                 <h1>anji</h1>
             </Link>
+            {/*Crate pfp here*/}
             <Link
-                className={'text-white bg-[#C4554D] py-3 px-5 inline-flex flex-row items-center space-x-2 font-bold hover:cursor-pointer rounded-xl'}
+                className={'text-white bg-[#C4554D] w-[80%] aspect-[3/1] py-3 px-5 inline-flex flex-row items-center justify-between font-bold hover:cursor-pointer rounded-xl'}
                 href={'#'}>
+                <p>New Deck</p>
                 <FaPlus/>
-                <p> New</p>
             </Link>
+
             {/* convert this section to a sidenav client component or else updates won't work */}
             <div className={'flex flex-col mt-6'}>
                 <div className={'bg-[#0000000D] py-1 px-3 inline-flex flex-row items-center space-x-2 font-bold rounded-l'}>
