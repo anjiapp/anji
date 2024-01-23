@@ -1,16 +1,15 @@
-import type {Metadata} from 'next'
-import './globals.css'
+import '@/css/globals.css'
 import Link from "next/link";
 import {FaPlus} from "react-icons/fa6";
 import SideNav from "@/components/SideNav";
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 
-export const metadata: Metadata = {
+export const metadata = {
     title: 'anji',
     description: 'Flash Card Web App',
 }
 
-export default function RootLayout({children}: { children: React.ReactNode }) {
+export default function RootLayout({children}) {
     /* Need to figure out folders data structure */
 
     // const [folders, setFolders] = useState([]);
