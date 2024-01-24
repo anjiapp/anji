@@ -2,8 +2,8 @@ import '@/css/globals.css'
 import Link from "next/link";
 import {FaPlus} from "react-icons/fa6";
 import SideNav from "@/components/SideNav";
-import { UserProvider } from '@auth0/nextjs-auth0/client';
-import { withPageAuthRequired, getSession } from '@auth0/nextjs-auth0';
+import {UserProvider} from '@auth0/nextjs-auth0/client';
+import {withPageAuthRequired, getSession} from '@auth0/nextjs-auth0';
 
 export const metadata = {
     title: 'anji',
@@ -11,7 +11,7 @@ export const metadata = {
 }
 
 export default withPageAuthRequired(async function RootLayout({children}) {
-    const { user } = await getSession();
+    const {user} = await getSession();
     /* Need to figure out folders data structure */
 
     // const [folders, setFolders] = useState([]);
@@ -29,8 +29,10 @@ export default withPageAuthRequired(async function RootLayout({children}) {
                 <Link href={'/dashboard'} className={'text-center'}>
                     <h1>anji</h1>
                 </Link>
-                <a href="/api/auth/login">Login</a>
-                {/*Crate pfp here*/}
+                <Link href={"/api/auth/logout"} className={"flex flex-row"}>
+                    <img src={user.picture} alt={"user_pfp"}/>
+                    <p>{user.name}</p>
+                </Link>
                 <Link
                     className={'text-white bg-[#C4554D] w-[80%] aspect-[3/1] py-3 px-5 inline-flex flex-row items-center justify-between font-bold hover:cursor-pointer rounded-xl'}
                     href={'#'}>

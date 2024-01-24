@@ -27,8 +27,7 @@ export default function RootLayout({children}) {
                 <Link href={'/dashboard'} className={'text-center'}>
                     <h1>anji</h1>
                 </Link>
-                <a href="/api/auth/login">Login</a>
-                {/*Crate pfp here*/}
+                <a href="/dashboard">Login</a>
                 <Link
                     className={'text-white bg-[#C4554D] w-[80%] aspect-[3/1] py-3 px-5 inline-flex flex-row items-center justify-between font-bold hover:cursor-pointer rounded-xl'}
                     href={'#'}>
