@@ -29,8 +29,8 @@ export default withPageAuthRequired(async function RootLayout({children}) {
                 <Link href={'/dashboard'} className={'text-center'}>
                     <h1>anji</h1>
                 </Link>
-                <Link href={"/api/auth/logout"} className={"flex flex-row"}>
-                    <img src={user.picture} alt={"user_pfp"}/>
+                <Link href={"/api/auth/logout"} className={"flex flex-row items-center my-3 space-x-2"}>
+                    <img src={user.picture} alt={"user_pfp"} width={40}/>
                     <p>{user.name}</p>
                 </Link>
                 <Link
