@@ -3,13 +3,15 @@ import Link from "next/link";
 import {FaPlus} from "react-icons/fa6";
 import SideNav from "@/components/SideNav";
 import { UserProvider } from '@auth0/nextjs-auth0/client';
+import { withPageAuthRequired, getSession } from '@auth0/nextjs-auth0';
 
 export const metadata = {
     title: 'anji',
     description: 'Flash Card Web App',
 }
 
-export default function RootLayout({children}) {
+export default withPageAuthRequired(async function RootLayout({children}) {
+    const { user } = await getSession();
     /* Need to figure out folders data structure */
 
     // const [folders, setFolders] = useState([]);
@@ -45,4 +47,4 @@ export default function RootLayout({children}) {
         </UserProvider>
         </html>
     )
-}
+}, {returnTo: '/dashboard'});
