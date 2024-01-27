@@ -1,5 +1,5 @@
 import sample_cards from "./sample_cards";
-import ModalChildren from "./ModalChildren";
+import ModalChildren from "@/components/ModalChildren";
 
 export default async function StudyPage({params, searchParams}) {
     const id = searchParams?.id;

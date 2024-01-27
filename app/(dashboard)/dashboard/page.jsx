@@ -1,4 +1,4 @@
-import PinnedCards from "./PinnedCards";
+import PinnedCards from "@/components/PinnedCards";
 import Calendar from "@/components/Calendar";
 
 import '@/css/Dashboard.css'

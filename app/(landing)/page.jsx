@@ -2,6 +2,6 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-      <Link href={'/dashboard'}>Click me</Link>
+      <Link href={'/login'}>Click me</Link>
   );
 }

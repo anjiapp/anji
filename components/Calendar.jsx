@@ -4,7 +4,7 @@ const calendarData = [];
 export default function Calendar() {
     if (calendarData.length === 0) {
         for (let i = 0; i < 364; i++) {
-            calendarData.push(Math.floor(Math.random() * 100));
+            calendarData.push(Math.floor(Math.random() * 101));
         }
     }
 

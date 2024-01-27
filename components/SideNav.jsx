@@ -3,13 +3,27 @@ import Link from "next/link";
 import {FaChevronDown, FaChevronRight, FaEllipsis, FaFolder, FaPlus} from "react-icons/fa6";
 import React from "react";
 
-export default function SideNav() {
+
+export default function SideNav({children}) {
     return (
-        <nav className={'flex flex-col mt-6'}>
-            <div className={'bg-[#0000000D] py-1 px-3 inline-flex flex-row items-center space-x-2 font-bold rounded-l'}>
+        <nav className={'py-4 px-2 border-gray-500 border-r-[2px] overflow-y-auto w-[250px] flex flex-col'}>
+            <Link href={'/dashboard'} className={'text-center'}>
+                <h1>anji</h1>
+            </Link>
+
+            {children}
+
+            <Link
+                className={'text-white bg-[#C4554D] w-[80%] aspect-[3/1] py-3 px-5 inline-flex flex-row items-center justify-between font-bold hover:cursor-pointer rounded-xl'}
+                href={'#'}>
+                <text>New Deck</text>
+                <FaPlus/>
+            </Link>
+
+            <div className={'bg-[#0000000D] py-1 px-3 inline-flex flex-row items-center space-x-2 font-bold rounded-l mt-6'}>
                 <button><FaChevronDown className={'text-[x-small] font-black'}/></button>
                 <FaFolder/>
-                <p className={'truncate'}>Selected Folder</p>
+                <text className={'truncate'}>Selected Folder</text>
                 <span className={'flex-1 min-w-0'}></span>
                 <FaEllipsis/>
             </div>
@@ -28,7 +42,7 @@ export default function SideNav() {
             <div className={'py-1 px-3 inline-flex flex-row items-center space-x-2 font-bold rounded-l'}>
                 <FaChevronRight className={'text-[x-small] font-black'}/>
                 <FaFolder/>
-                <p className={'truncate'}>Tutorial</p>
+                <text className={'truncate'}>Tutorial</text>
                 <span className={'flex-1 min-w-0'}></span>
                 <FaEllipsis className={''}/>
             </div>
