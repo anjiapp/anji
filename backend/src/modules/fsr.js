@@ -72,7 +72,7 @@ function apply_fuzz(ivl) {
   return Math.floor(fuzz_factor * (max_ivl - min_ivl + 1) + min_ivl);
 }
 
-export async function fsr(currentStability, currentDifficulty,elapsedDays, rating) {
+export async function fsr(currentStability, currentDifficulty,elapsedDays, userRating) {
     //Calculate new stability and difficulty
     let retrievability = forgetting_curve(elapsedDays, currentStability);
     let newDifficulty = next_difficulty(currentDifficulty, userRating);

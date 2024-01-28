@@ -1,6 +1,4 @@
-import { Deck } from "./modules/types/deck.js";
-import { Card } from "./modules/types/card.js";
-import { fsr } from "./modules/modules/fsr.js";
+import { fsr } from "./src/modules/fsr.js";
 
 let deck = {
     _metadata: {
@@ -60,4 +58,4 @@ let deck = {
 
 
 
-console.log(fsr(deck.cards[0].currentStability, deck.cards[0].newDifficulty, 1, "easy"));
+console.log(fsr(deck.cards[0].currentStability, deck.cards[0].newDifficulty, 1, "hard"));
