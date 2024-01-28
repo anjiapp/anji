@@ -1,17 +1,19 @@
-'use client';
 import Link from "next/link";
 import {FaChevronDown, FaChevronRight, FaEllipsis, FaFolder, FaPlus} from "react-icons/fa6";
-import React from "react";
+// import React from "react";
 
 
-export default function SideNav({children}) {
+export default function SideNav(props) {
     return (
         <nav className={'py-4 px-2 border-gray-500 border-r-[2px] overflow-y-auto w-[250px] flex flex-col'}>
             <Link href={'/dashboard'} className={'text-center'}>
                 <h1>anji</h1>
             </Link>
 
-            {children}
+            <Link href={'/auth/signout'} className={"flex flex-row items-center my-3 space-x-2"}>
+                <img src={props.pfp} alt={"user_pfp"} width={40}/>
+                <p>{props.user.user_metadata.full_name}</p>
+            </Link>
 
             <Link
                 className={'text-white bg-[#C4554D] w-[80%] aspect-[3/1] py-3 px-5 inline-flex flex-row items-center justify-between font-bold hover:cursor-pointer rounded-xl'}

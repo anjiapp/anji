@@ -1,15 +1,9 @@
-[
-  {
-    "title": "Philosophy",
-    "deck": [
-      {
-        "question": "What is the capital of the United States?",
-        "answer": "Washington, D.C."
-      },
-      {
-        "question": "What is the capital of the United Kingdom?",
-        "answer": "London"
-      }
-    ]
-  }
-]
+{
+    "answer": "",
+    "question": "",
+    "next_seen": "01-01-0001T00:00:00.000Z",
+    "card_state": "new", 
+    "difficulty": 0,
+    "stability": 0,
+    "retreivability": 0
+}

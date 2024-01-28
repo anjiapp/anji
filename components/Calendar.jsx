@@ -18,7 +18,7 @@ export default function Calendar() {
                                      backgroundColor: value/100.0 < .1 ? '#edebeb' : `rgb(0, ${255-(value/100.0)*190}, 0)`
                             }}>
                                 <div className={'calendar-day-text'}> {/*Change to a tooltip later*/}
-                                    <p className={'text-center'}>{value}</p>
+                                    <p className={'text-center flex justify-center items-center'}>{value}</p>
                                 </div>
                             </div>
                         )

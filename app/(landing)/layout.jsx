@@ -1,6 +1,6 @@
 import '@/css/globals.css'
 import Link from "next/link";
-import SideNav from "@/components/SideNav";
+import TopNav from "@/components/TopNav";
 
 export const metadata = {
     title: 'anji',
@@ -11,10 +11,8 @@ export default function RootLayout({children}) {
 
     return (
         <html lang="en">
-        <body className={'h-screen relative flex flex-row'}>
-        <SideNav>
-            <Link href={'/login'} className={'my-3'}>Login</Link>
-        </SideNav>
+        <body className={'h-screen relative bg-[#FBF8F4]'}>
+        <TopNav />
         {
             children
         }

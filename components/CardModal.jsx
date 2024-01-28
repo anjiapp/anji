@@ -20,7 +20,7 @@ export default function CardModal(props) {
                 className={'card-modal'}>
                 <div className={'card-info space-y-2'}>
                     <div className={"flex flex-row justify-between items-center"}>
-                        <h1>{props.title}</h1>
+                        <h1>{props.deck.title}</h1>
                         <MdOutlineClose size={40} className={'close-button hover:cursor-pointer h-full'} onClick={() => {
                             props.setIsDeckOpen(false);
                         }}/>
@@ -58,7 +58,7 @@ export default function CardModal(props) {
                         <Link href={{
                             pathname: '/deck',
                             query: {
-                                id: 0
+                                id: `${props.deck.deck_id}`
                             }
                         }}
                               className={'study-button'}>Study Now

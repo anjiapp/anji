@@ -1,6 +1,6 @@
 'use client'
 import {useCallback, useEffect, useState} from 'react'
-import {createClient} from '@utils/supabase/client'
+import {createClient} from '@/utils/supabase/client'
 import Link from "next/link";
 
 export default function AccountForm({user}) {

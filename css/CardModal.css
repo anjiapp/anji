@@ -96,4 +96,7 @@
     font-size: 1.875rem;
     line-height: 2.25rem;
     font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

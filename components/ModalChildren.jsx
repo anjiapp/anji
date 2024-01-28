@@ -12,13 +12,13 @@ const buttonStyle = {
     marginBottom: '2.5rem',
 }
 
-const ModalChildren = ({sampleCards}) => {
+const ModalChildren = ({cards}) => {
     const [index, setIndex] = React.useState(0);
     const [onFront, setOnFront] = React.useState(true);
     return (
         <>
             <div className={'card-modal'}>
-                {index === sampleCards.length ?
+                {index === cards.length ?
                     <>
                         <h2 className={'text-center mt-5 text-wrap text-4xl'}>Session Finished!</h2>
                         <Link className={"absolute bg-[#d9d9d9] px-9 py-4 self-center top-[70%] rounded-3xl"}
@@ -28,11 +28,11 @@ const ModalChildren = ({sampleCards}) => {
                     </>
                     :
                     <h2 className={'text-center my-auto text-wrap text-4xl'}>
-                        {onFront ? sampleCards[index].question : sampleCards[index].answer}
+                        {onFront ? cards[index].question : cards[index].answer}
                     </h2>
                 }
             </div>
-            {index !== sampleCards.length &&
+            {index !== cards.length &&
                 <div className={'absolute bottom-[5vh] self-center'}>
                     {
                         onFront ?
