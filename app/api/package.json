@@ -9,7 +9,7 @@
     "types": "./src/types"
   },
   "scripts": {
-    "flow": "flow"
+    
   },
   "repository": {
     "type": "git",
