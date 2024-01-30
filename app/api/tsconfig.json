@@ -10,5 +10,5 @@
 		"strictNullChecks": true,
 		"strict": true,
 	},
-	"include": ["./src/**/*"]
+	"include": ["./src/**/*", "fsr.js"]
 }
