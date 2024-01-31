@@ -1,5 +1,3 @@
-'use client';
-
 import Link from "next/link";
 import {FaChevronDown, FaChevronRight, FaEllipsis, FaFolder, FaPlus} from "react-icons/fa6";
 

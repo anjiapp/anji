@@ -1,7 +1,5 @@
 import Link from "next/link";
 import {FaChevronDown, FaChevronRight, FaEllipsis, FaFolder, FaPlus} from "react-icons/fa6";
-// import React from "react";
-
 
 export default function SideNav(props) {
     return (
