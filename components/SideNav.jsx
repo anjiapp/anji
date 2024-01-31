@@ -48,6 +48,15 @@ export default function SideNav(props) {
                 <span className={'flex-1 min-w-0'}></span>
                 <FaEllipsis className={''}/>
             </div>
+            {
+                props.decks.map((deck, i) => {
+                    return (
+                        <Link key={i} href={'/deck?id=' + deck.deck_id} className={'flex flex-col pl-7'}>
+                            <text className={'truncate'}>{deck.title}</text>
+                        </Link>
+                    )
+                })
+            }
         </nav>
     )
 }
