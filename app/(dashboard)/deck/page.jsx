@@ -10,15 +10,24 @@ export default async function StudyPage({params, searchParams}) {
         .select()
         .eq('deck_id', searchParams.id)
         .single();
-    console.log(deck)
+    const { data: cards, error: cards_error } = await supabase
+        .schema('user_data')
+        .from('cards')
+        .select()
+        .eq('deck_id', searchParams.id);
+    console.log(cards)
     if (deck_error) {
         console.log(deck_error);
+        return <div>error</div>
+    }
+    if (cards_error) {
+        console.log(cards_error);
         return <div>error</div>
     }
     return (
         <div className={'relative flex flex-col w-full h-full bg-[#d9d9d9] items-center'}>
             <h2 className={"bg-white self-start w-full py-4 px-7"}>{deck.title}</h2>
-            <ModalChildren deck={deck.cards} />
+            <ModalChildren deck={cards} />
         </div>
     );
 }
