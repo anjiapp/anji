@@ -7,20 +7,12 @@ import "@/css/Dashboard.css";
 const year = 2024;
 export default async function Dashboard() {
 	const supabase = await createClient(cookies());
-	const { data: user, error: user_error } = await supabase
-		.schema("user_data")
-		.from("users")
-		.select("*");
-	console.log(user);
-	if (user_error) {
-		console.log(user_error);
-		return <div>error</div>;
-	}
     const { data: pinned_decks, error: pinned_decks_error } = await supabase
         .schema("user_data")
-        .from("decks")
-        .select();
-	console.log(pinned_decks);
+        .from("user_pinned_decks")
+        .select('decks(*)');
+    const flattenedDecks = pinned_decks?.map((item) => item.decks);
+	console.log(flattenedDecks);
 	if (pinned_decks_error) {
 		console.log(pinned_decks_error);
 		return <div>error</div>;
@@ -48,7 +40,7 @@ export default async function Dashboard() {
 					<p className={"text-center font-medium text-lg"}>{year}</p>
 				</div>
 				<h2 className={"text-2xl font-bold"}>DECKS</h2>
-				<PinnedCards pinned_decks={pinned_decks} />
+				<PinnedCards pinned_decks={flattenedDecks} />
 			</div>
 		</div>
 	);
