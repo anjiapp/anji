@@ -19,6 +19,15 @@ export default function AuthForm() {
 		}
 	};
 
+	const OAuth = (provider) => {
+		return async () => {
+			await supabase.auth.signInWithOAuth({
+				provider: provider,
+			});
+			router.push("/auth/callback");
+		};
+	};
+
 	const SignInForm = () => {
 		const handleSignIn = async (e) => {
 			e.preventDefault();
@@ -30,8 +39,9 @@ export default function AuthForm() {
 			});
 			if (error) {
 				alert(error.message);
-			}
-			router.push("/auth/callback");
+            } else {
+                router.push("/auth/callback");
+            }
 		};
 
 		return (
@@ -45,16 +55,16 @@ export default function AuthForm() {
 						type="email"
 						placeholder="email"
 						name={"email"}
-                        style={styles.input}
-                        required
+						style={styles.input}
+						required
 					/>
 					<p>Password</p>
 					<input
 						type="password"
 						placeholder="password"
 						name={"password"}
-                        style={styles.input}
-                        required
+						style={styles.input}
+						required
 					/>
 					<button
 						type="submit"
@@ -78,11 +88,7 @@ export default function AuthForm() {
 				<p className={"self-center"}>OR</p>
 				<button
 					className="px-4 py-2 w-[60%] border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
-					onClick={async () =>
-						await supabase.auth.signInWithOAuth({
-							provider: "google",
-						})
-					}
+					onClick={async () => await OAuth("google")}
 				>
 					<img
 						className="w-6 h-6"
@@ -92,31 +98,13 @@ export default function AuthForm() {
 					/>
 					<span>Login with Google</span>
 				</button>
-				<button
-					onClick={async () =>
-						await supabase.auth.signInWithOAuth({
-							provider: "facebook",
-						})
-					}
-				>
+				<button onClick={async () => await OAuth("facebook")}>
 					Sign in with Facebook
 				</button>
-				<button
-					onClick={async () =>
-						await supabase.auth.signInWithOAuth({
-							provider: "twitter",
-						})
-					}
-				>
+				<button onClick={async () => await OAuth("twitter")}>
 					Sign in with Twitter
 				</button>
-				<button
-					onClick={async () =>
-						await supabase.auth.signInWithOAuth({
-							provider: "azure",
-						})
-					}
-				>
+				<button onClick={async () => await OAuth("azure")}>
 					Sign in with Microsoft
 				</button>
 			</>
@@ -141,8 +129,9 @@ export default function AuthForm() {
 			});
 			if (error) {
 				alert(error.message);
+			} else {
+				router.push("/auth/callback");
 			}
-			router.push("/auth/callback");
 		};
 
 		return (
@@ -156,32 +145,32 @@ export default function AuthForm() {
 						type="text"
 						placeholder="name"
 						name={"name"}
-                        style={styles.input}
-                        required
+						style={styles.input}
+						required
 					/>
 					<p>Email Address</p>
 					<input
 						type="email"
 						placeholder="email"
 						name={"email"}
-                        style={styles.input}
-                        required
+						style={styles.input}
+						required
 					/>
 					<p>Password</p>
 					<input
 						type="password"
 						placeholder="password"
 						name={"password"}
-                        style={styles.input}
-                        required
+						style={styles.input}
+						required
 					/>
 					<p>Confirm Password</p>
 					<input
 						type="password"
 						placeholder="confirm password"
 						name={"confirm-password"}
-                        style={styles.input}
-                        required
+						style={styles.input}
+						required
 					/>
 					<button
 						type="submit"
@@ -194,40 +183,16 @@ export default function AuthForm() {
 					Already have an account? Log In
 				</a>
 				<p>OR</p>
-				<button
-					onClick={async () =>
-						await supabase.auth.signInWithOAuth({
-							provider: "google",
-						})
-					}
-				>
+				<button onClick={async () => await OAuth("google")}>
 					Sign in with Google
 				</button>
-				<button
-					onClick={async () =>
-						await supabase.auth.signInWithOAuth({
-							provider: "facebook",
-						})
-					}
-				>
+				<button onClick={async () => await OAuth("facebook")}>
 					Sign in with Facebook
 				</button>
-				<button
-					onClick={async () =>
-						await supabase.auth.signInWithOAuth({
-							provider: "twitter",
-						})
-					}
-				>
+				<button onClick={async () => await OAuth("twitter")}>
 					Sign in with Twitter
 				</button>
-				<button
-					onClick={async () =>
-						await supabase.auth.signInWithOAuth({
-							provider: "azure",
-						})
-					}
-				>
+				<button onClick={async () => await OAuth("azure")}>
 					Sign in with Microsoft
 				</button>
 			</>
