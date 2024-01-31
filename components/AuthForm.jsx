@@ -1,10 +1,15 @@
 "use client";
-import { Auth } from "@supabase/auth-ui-react";
-import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { createClient } from "@/utils/supabase/client";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 
+const providers = ["google", "facebook", "twitter", "azure"];
+const logos = {
+	google: "https://www.svgrepo.com/show/475656/google-color.svg",
+	facebook: "https://www.svgrepo.com/show/475656/google-color.svg",
+	twitter: "https://www.svgrepo.com/show/475656/google-color.svg",
+	azure: "https://www.svgrepo.com/show/475656/google-color.svg",
+};
 const supabase = createClient();
 export default function AuthForm() {
 	const router = useRouter();
@@ -19,13 +24,16 @@ export default function AuthForm() {
 		}
 	};
 
-	const OAuth = (provider) => {
-		return async () => {
-			await supabase.auth.signInWithOAuth({
-				provider: provider,
-			});
-			router.push("/auth/callback");
-		};
+	const OAuth = async (provider) => {
+		const { data, error } = await supabase.auth.signInWithOAuth({
+            provider: provider,
+            options: {
+                redirectTo: "http://localhost:3000/auth/callback",
+            },
+		});
+		if (error) {
+			alert(error.message);
+		}
 	};
 
 	const SignInForm = () => {
@@ -35,13 +43,13 @@ export default function AuthForm() {
 			const password = e.target.password.value;
 			const { user, error } = await supabase.auth.signInWithPassword({
 				email: email,
-				password: password,
+                password: password,
 			});
 			if (error) {
 				alert(error.message);
-            } else {
-                router.push("/auth/callback");
-            }
+			} else {
+				router.push("/auth/callback");
+			}
 		};
 
 		return (
@@ -86,27 +94,25 @@ export default function AuthForm() {
 					Don't have an account? Sign Up
 				</a>
 				<p className={"self-center"}>OR</p>
-				<button
-					className="px-4 py-2 w-[60%] border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
-					onClick={async () => await OAuth("google")}
-				>
-					<img
-						className="w-6 h-6"
-						src="https://www.svgrepo.com/show/475656/google-color.svg"
-						loading="lazy"
-						alt="google logo"
-					/>
-					<span>Login with Google</span>
-				</button>
-				<button onClick={async () => await OAuth("facebook")}>
-					Sign in with Facebook
-				</button>
-				<button onClick={async () => await OAuth("twitter")}>
-					Sign in with Twitter
-				</button>
-				<button onClick={async () => await OAuth("azure")}>
-					Sign in with Microsoft
-				</button>
+				{providers.map((provider, index) => {
+					return (
+						<button
+							className="mt-2 px-4 py-2 w-[60%] border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
+							key={index}
+							onClick={async () => await OAuth(provider)}
+						>
+							<img
+								src={logos[provider]}
+								alt={provider + " logo"}
+								className={"w-6 h-6"}
+							/>
+							Sign in with
+							{" " +
+								provider.charAt(0).toUpperCase() +
+								provider.slice(1)}
+						</button>
+					);
+				})}
 			</>
 		);
 	};
@@ -123,9 +129,13 @@ export default function AuthForm() {
 				return;
 			}
 			const { user, error } = await supabase.auth.signUp({
-				name: name,
 				email: email,
 				password: password,
+				options: {
+					data: {
+						full_name: name,
+					},
+				},
 			});
 			if (error) {
 				alert(error.message);
@@ -183,18 +193,25 @@ export default function AuthForm() {
 					Already have an account? Log In
 				</a>
 				<p>OR</p>
-				<button onClick={async () => await OAuth("google")}>
-					Sign in with Google
-				</button>
-				<button onClick={async () => await OAuth("facebook")}>
-					Sign in with Facebook
-				</button>
-				<button onClick={async () => await OAuth("twitter")}>
-					Sign in with Twitter
-				</button>
-				<button onClick={async () => await OAuth("azure")}>
-					Sign in with Microsoft
-				</button>
+				{providers.map((provider, index) => {
+					return (
+						<button
+							className="mt-2 px-4 py-2 w-[60%] border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
+							key={index}
+							onClick={async () => await OAuth(provider)}
+						>
+							<img
+								src={logos[provider]}
+								alt={provider + " logo"}
+								className={"w-6 h-6"}
+							/>
+							Sign up with
+							{" " +
+								provider.charAt(0).toUpperCase() +
+								provider.slice(1)}
+						</button>
+					);
+				})}
 			</>
 		);
 	};
