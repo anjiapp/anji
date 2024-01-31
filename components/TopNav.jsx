@@ -11,8 +11,8 @@ export default function TopNav() {
             </Link>
 
             <div className={'space-x-2'}>
-                <Link href={'/login'} className={'border-r border-black px-3'}>Log In</Link>
-                <Link href={'/login?signup'} className={'bg-black rounded-xl text-white font-bold py-2 px-3'}>Sign Up</Link>
+                <Link href={'/auth'} className={'border-r border-black px-3'}>Log In</Link>
+                <Link href={'/auth?signup'} className={'bg-black rounded-xl text-white font-bold py-2 px-3'}>Sign Up</Link>
             </div>
         </nav>
     )

@@ -18,7 +18,7 @@ export default function Home() {
                             truly personalized learning
                             experience.</p>
                         <div className={'!mt-9'}>
-                            <Link href={'/login?signup'}
+                            <Link href={'/auth?signup'}
                                   className={'bg-black text-white font-bold rounded-xl px-3 py-2'}>
                                 Sign Up
                             </Link>

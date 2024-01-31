@@ -61,5 +61,5 @@ export const createClient = (request: NextRequest) => {
 };
 
 export const config = {
-  matcher: ['/dashboard', '/deck', '/login', '/account'],
+  matcher: ['/dashboard', '/deck', '/auth', '/account'],
 }
