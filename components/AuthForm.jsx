@@ -54,6 +54,26 @@ export default function AuthForm() {
 
 		return (
 			<>
+				{providers.map((provider, index) => {
+					return (
+						<button
+							className="mt-2 px-4 py-2 w-full border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
+							key={index}
+							onClick={async () => await OAuth(provider)}
+						>
+							<img
+								src={logos[provider]}
+								alt={provider + " logo"}
+								className={"w-6 h-6"}
+							/>
+							Sign in with
+							{" " +
+								provider.charAt(0).toUpperCase() +
+								provider.slice(1)}
+						</button>
+					);
+				})}
+				<p className={"self-center"}>OR</p>
 				<form
 					className={"flex flex-col w-full"}
 					onSubmit={handleSignIn}
@@ -93,26 +113,6 @@ export default function AuthForm() {
 				>
 					Don't have an account? Sign Up
 				</a>
-				<p className={"self-center"}>OR</p>
-				{providers.map((provider, index) => {
-					return (
-						<button
-							className="mt-2 px-4 py-2 w-[60%] border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
-							key={index}
-							onClick={async () => await OAuth(provider)}
-						>
-							<img
-								src={logos[provider]}
-								alt={provider + " logo"}
-								className={"w-6 h-6"}
-							/>
-							Sign in with
-							{" " +
-								provider.charAt(0).toUpperCase() +
-								provider.slice(1)}
-						</button>
-					);
-				})}
 			</>
 		);
 	};
@@ -146,6 +146,26 @@ export default function AuthForm() {
 
 		return (
 			<>
+				{providers.map((provider, index) => {
+					return (
+						<button
+							className="mt-2 px-4 py-2 w-full border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
+							key={index}
+							onClick={async () => await OAuth(provider)}
+						>
+							<img
+								src={logos[provider]}
+								alt={provider + " logo"}
+								className={"w-6 h-6"}
+							/>
+							Sign up with
+							{" " +
+								provider.charAt(0).toUpperCase() +
+								provider.slice(1)}
+						</button>
+					);
+                })}
+                <p>OR</p>
 				<form
 					className={"flex flex-col w-full"}
 					onSubmit={handleSignUp}
@@ -189,29 +209,9 @@ export default function AuthForm() {
 						Sign Up
 					</button>
 				</form>
-				<a href={"?"} className="self-start">
+				<a href={"?"} className="self-start underline">
 					Already have an account? Log In
 				</a>
-				<p>OR</p>
-				{providers.map((provider, index) => {
-					return (
-						<button
-							className="mt-2 px-4 py-2 w-[60%] border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
-							key={index}
-							onClick={async () => await OAuth(provider)}
-						>
-							<img
-								src={logos[provider]}
-								alt={provider + " logo"}
-								className={"w-6 h-6"}
-							/>
-							Sign up with
-							{" " +
-								provider.charAt(0).toUpperCase() +
-								provider.slice(1)}
-						</button>
-					);
-				})}
 			</>
 		);
 	};
