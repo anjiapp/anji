@@ -13,7 +13,6 @@ export default async function Dashboard() {
         .select('order, decks(deck_id, title)')
         .order('order');
     const flattenedDecks = pinned_decks?.map((item) => item.decks);
-	console.log(flattenedDecks);
 	if (pinned_decks_error) {
 		console.log(pinned_decks_error);
 		return <div>error</div>;

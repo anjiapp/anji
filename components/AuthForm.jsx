@@ -57,7 +57,7 @@ export default function AuthForm() {
 				{providers.map((provider, index) => {
 					return (
 						<button
-							className="mt-2 px-4 py-2 w-full border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
+							className="justify-center mt-2 px-4 py-2 w-full border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
 							key={index}
 							onClick={async () => await OAuth(provider)}
 						>
@@ -149,7 +149,7 @@ export default function AuthForm() {
 				{providers.map((provider, index) => {
 					return (
 						<button
-							className="mt-2 px-4 py-2 w-full border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
+							className="justify-center mt-2 px-4 py-2 w-full border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
 							key={index}
 							onClick={async () => await OAuth(provider)}
 						>
