@@ -7,13 +7,13 @@ export default async function StudyPage({params, searchParams}) {
     const {data: deck, error: deck_error} = await supabase
         .schema('user_data')
         .from('decks')
-        .select()
+        .select('title')
         .eq('deck_id', searchParams.id)
         .single();
     const { data: cards, error: cards_error } = await supabase
         .schema('user_data')
         .from('cards')
-        .select()
+        .select('scheduled_date, card_state, difficulty, stability, retrievability, answer, question')
         .eq('deck_id', searchParams.id);
     console.log(cards)
     if (deck_error) {

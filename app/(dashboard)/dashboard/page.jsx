@@ -10,7 +10,8 @@ export default async function Dashboard() {
     const { data: pinned_decks, error: pinned_decks_error } = await supabase
         .schema("user_data")
         .from("user_pinned_decks")
-        .select('decks(*)');
+        .select('order, decks(deck_id, title)')
+        .order('order');
     const flattenedDecks = pinned_decks?.map((item) => item.decks);
 	console.log(flattenedDecks);
 	if (pinned_decks_error) {
