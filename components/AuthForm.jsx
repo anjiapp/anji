@@ -45,14 +45,16 @@ export default function AuthForm() {
 						type="email"
 						placeholder="email"
 						name={"email"}
-						style={styles.input}
+                        style={styles.input}
+                        required
 					/>
 					<p>Password</p>
 					<input
 						type="password"
 						placeholder="password"
 						name={"password"}
-						style={styles.input}
+                        style={styles.input}
+                        required
 					/>
 					<button
 						type="submit"
@@ -83,7 +85,7 @@ export default function AuthForm() {
 					}
 				>
 					<img
-						class="w-6 h-6"
+						className="w-6 h-6"
 						src="https://www.svgrepo.com/show/475656/google-color.svg"
 						loading="lazy"
 						alt="google logo"
@@ -154,28 +156,32 @@ export default function AuthForm() {
 						type="text"
 						placeholder="name"
 						name={"name"}
-						style={styles.input}
+                        style={styles.input}
+                        required
 					/>
 					<p>Email Address</p>
 					<input
 						type="email"
 						placeholder="email"
 						name={"email"}
-						style={styles.input}
+                        style={styles.input}
+                        required
 					/>
 					<p>Password</p>
 					<input
 						type="password"
 						placeholder="password"
 						name={"password"}
-						style={styles.input}
+                        style={styles.input}
+                        required
 					/>
 					<p>Confirm Password</p>
 					<input
 						type="password"
 						placeholder="confirm password"
 						name={"confirm-password"}
-						style={styles.input}
+                        style={styles.input}
+                        required
 					/>
 					<button
 						type="submit"
