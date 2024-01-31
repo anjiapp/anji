@@ -6,9 +6,9 @@ import { useRouter } from "next/navigation";
 const providers = ["google", "facebook", "twitter", "azure"];
 const logos = {
 	google: "https://www.svgrepo.com/show/475656/google-color.svg",
-	facebook: "https://www.svgrepo.com/show/475656/google-color.svg",
-	twitter: "https://www.svgrepo.com/show/475656/google-color.svg",
-	azure: "https://www.svgrepo.com/show/475656/google-color.svg",
+	facebook: "https://www.svgrepo.com/show/475647/facebook-color.svg",
+	twitter: "https://www.svgrepo.com/show/475689/twitter-color.svg",
+	azure: "https://www.svgrepo.com/show/448239/microsoft.svg",
 };
 const supabase = createClient();
 export default function AuthForm() {
