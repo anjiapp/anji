@@ -3,7 +3,7 @@ import {FaChevronDown, FaChevronRight, FaEllipsis, FaFolder, FaPlus} from "react
 
 export default function SideNav(props) {
     return (
-        <nav className={'py-4 px-2 border-gray-500 border-r-[2px] overflow-y-auto w-[250px] flex flex-col'}>
+        <nav className={'py-4 px-2 border-gray-500 border-r-[2px] overflow-y-auto w-[15vw] flex flex-col'}>
             <Link href={'/dashboard'} className={'text-center'}>
                 <h1>anji</h1>
             </Link>

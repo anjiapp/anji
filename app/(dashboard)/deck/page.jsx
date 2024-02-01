@@ -8,7 +8,7 @@ export default async function StudyPage({params, searchParams}) {
 		.schema("user_data")
 		.from("decks")
 		.select(
-			"title, cards(scheduled_date, card_state, difficulty, stability, retrievability, answer, question)"
+			"title, cards(id, scheduled_date, card_state, difficulty, stability, retrievability, answer, question)"
 		)
 		.eq("deck_id", searchParams.id)
 		.single();
