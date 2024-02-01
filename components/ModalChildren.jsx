@@ -20,7 +20,7 @@ const ModalChildren = ({ deck }) => {
 	const [index, setIndex] = React.useState(0);
 	const [onFront, setOnFront] = React.useState(true);
 	const handleCardClick = async (button) => {
-		const fsr_data = await fsr(
+		await fsr(
 			deck[index].stability,
 			deck[index].difficulty,
 			deck[index].last_reviewed == null

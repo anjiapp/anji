@@ -49,7 +49,7 @@ export default function SideNav(props) {
             {
                 props.decks.map((deck, i) => {
                     return (
-                        <Link key={i} href={'/deck?id=' + deck.deck_id} className={'flex flex-col pl-7'}>
+                        <Link key={i} href={'?deck_id=' + deck.deck_id} className={'flex flex-col pl-7'}>
                             <text className={'truncate'}>{deck.title}</text>
                         </Link>
                     )

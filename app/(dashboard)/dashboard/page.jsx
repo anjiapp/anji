@@ -5,7 +5,7 @@ import { cookies } from "next/headers";
 
 import "@/css/Dashboard.css";
 const year = 2024;
-export default async function Dashboard() {
+export default async function Dashboard({ params, searchParams }) {
 	const supabase = await createClient(cookies());
     const { data: pinned_decks, error: pinned_decks_error } = await supabase
         .schema("user_data")
@@ -40,7 +40,7 @@ export default async function Dashboard() {
 					<p className={"text-center font-medium text-lg"}>{year}</p>
 				</div>
 				<h2 className={"text-2xl font-bold"}>DECKS</h2>
-				<PinnedCards pinned_decks={flattenedDecks} />
+				<PinnedCards pinned_decks={flattenedDecks} searchParams={searchParams} />
 			</div>
 		</div>
 	);
