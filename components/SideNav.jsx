@@ -30,7 +30,7 @@ export default function SideNav(props) {
 				className={
 					"text-white bg-[#C4554D] w-[80%] aspect-[3/1] py-3 px-5 inline-flex flex-row items-center justify-between font-bold hover:cursor-pointer rounded-xl"
 				}
-				href={"/deck/create_deck"}
+				href={"/deck/create-deck"}
 			>
 				<text>New Deck</text>
 				<FaPlus />
