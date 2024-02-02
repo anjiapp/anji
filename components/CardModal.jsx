@@ -59,10 +59,7 @@ export default function CardModal({deck}) {
 						</div>
 						<Link
 							href={{
-								pathname: "/deck",
-								query: {
-									id: `${deck.deck_id}`,
-								},
+								pathname: `/${deck.deck_id}`,
 							}}
 							className={"study-button"}
 						>

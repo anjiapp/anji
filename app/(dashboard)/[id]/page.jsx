@@ -10,7 +10,7 @@ export default async function StudyPage({params, searchParams}) {
 		.select(
 			"title, cards(id, scheduled_date, card_state, difficulty, stability, retrievability, answer, question)"
 		)
-		.eq("deck_id", searchParams.id)
+		.eq("deck_id", params.id)
 		.single();
     if (deck_error) {
         console.log(deck_error);
