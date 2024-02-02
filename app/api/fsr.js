@@ -1,3 +1,5 @@
+//const { promises } = require("dns");
+
 // Configuration
 const DECAY = -0.5; // Decay constant for FSRS
 const FACTOR = 0.9 ** (1 / DECAY) - 1; // Factor used in the forgetting curve
@@ -21,7 +23,10 @@ function forgetting_curve(elpased_days, stability) {
 // Calculate next interval
 function next_interval(stability) {
   const new_interval = apply_fuzz(stability / FACTOR * (Math.pow(requestRetention, 1 / DECAY) - 1));
-  return Math.min(Math.max(Math.round(new_interval), 1), maximumInterval);
+  //return Math.min(Math.max(Math.round(new_interval), 1), maximumInterval);
+  console.log(new_interval)
+  return new_interval;
+  return Math.max(new_interval, maximumInterval);
 }
 
 // Calculate next difficulty based on the rating
@@ -84,9 +89,15 @@ export async function fsr(currentStability, currentDifficulty, elapsedDays, user
     const nextReviewInterval = next_interval(newStability);
     const nextReviewDate = new Date(Date.now() + nextReviewInterval * 24 * 60 * 60 * 1000);
     
+    
     //Limit the stability and difficulty to be within the range
     newStability = Math.min(Math.max(newStability, 0), 100);
     newDifficulty = Math.min(Math.max(newDifficulty, 0), 10);
+
+    if (newDifficulty > 10 || newStability > 100 || newDifficulty < 0 || newStability < 0) {
+      
+      throw new Error(newStability + " " + newDifficulty + "");
+    }
 
     return {
         newStability,

@@ -22,9 +22,9 @@ const ModalChildren = ({ deck }) => {
 	const handleCardClick = async (button) => {
 		await fsr(
 			deck[index].stability,
-			deck[index].difficulty,
+			deck[index].difficulty, 
 			deck[index].last_reviewed == null
-				? 36500
+				? 1
 				: (Date.now() - deck[index].last_reviewed) / 86400000,
 			button
 		).then(async (res) => {
@@ -43,6 +43,8 @@ const ModalChildren = ({ deck }) => {
 			if (error) {
 				console.log(error);
 			}
+		}).catch((err) => {
+			console.log(err);
 		});
 
 		setIndex(index + 1);
