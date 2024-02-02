@@ -7,29 +7,15 @@ export default function AccountForm({user}) {
     const supabase = createClient()
     const [loading, setLoading] = useState(true)
     const [fullname, setFullname] = useState(null)
-    const [username, setUsername] = useState(null)
-    const [website, setWebsite] = useState(null)
     const [avatar_url, setAvatarUrl] = useState(null)
 
     const getProfile = useCallback(async () => {
         try {
             setLoading(true)
-
-            const {data, error, status} = await supabase
-                .from('profiles')
-                .select(`full_name, username, website, avatar_url`)
-                .eq('id', user?.id)
-                .single()
-
-            if (error && status !== 406) {
-                throw error
-            }
-
-            if (data) {
-                setFullname(data.full_name)
-                setUsername(data.username)
-                setWebsite(data.website)
-                setAvatarUrl(data.avatar_url)
+            if (user) {
+                console.log(user)
+                setFullname(user.user_metadata.full_name);
+                setAvatarUrl(user.user_metadata.picture);
             }
         } catch (error) {
             alert('Error loading user data!')
@@ -42,15 +28,13 @@ export default function AccountForm({user}) {
         getProfile()
     }, [user, getProfile])
 
-    async function updateProfile({username, website, avatar_url}) {
+    async function updateProfile({username, avatar_url}) {
         try {
             setLoading(true)
 
             const {error} = await supabase.from('profiles').upsert({
                 id: user?.id,
                 full_name: fullname,
-                username,
-                website,
                 avatar_url,
                 updated_at: new Date().toISOString(),
             })
@@ -78,29 +62,11 @@ export default function AccountForm({user}) {
                     onChange={(e) => setFullname(e.target.value)}
                 />
             </div>
-            <div>
-                <label htmlFor="username">Username</label>
-                <input
-                    id="username"
-                    type="text"
-                    value={username || ''}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-            </div>
-            <div>
-                <label htmlFor="website">Website</label>
-                <input
-                    id="website"
-                    type="url"
-                    value={website || ''}
-                    onChange={(e) => setWebsite(e.target.value)}
-                />
-            </div>
 
             <div>
                 <button
                     className="button primary block"
-                    onClick={() => updateProfile({fullname, username, website, avatar_url})}
+                    onClick={() => updateProfile({fullname, avatar_url})}
                     disabled={loading}
                 >
                     {loading ? 'Loading ...' : 'Update'}
