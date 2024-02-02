@@ -1,6 +1,5 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
+<a href="https://anji.app/">
+  <h1 align="center">Anji.app Source</h1>
 </a>
 
 <p align="center">
@@ -9,31 +8,20 @@
 
 <p align="center">
   <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
   <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
+  <a href="#to-run-locally"><strong>Clone and run locally</strong></a>
 </p>
 <br/>
 
 ## Features
 
 - Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Middleware
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
-
-## Demo
-
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+  - Spaced repetition algorythnewerkfgnmergnergerg 
+  - Deck ception or something
+  - AI-Powered auto generate cards/decks
+  - cool UI 
+  - uhhhhhhhhhhhhhhhhhhhhhhhhh
+  - It just mildly works
 
 ## Deploy to Vercel
 
@@ -47,47 +35,27 @@ The above will also clone the Starter kit to your GitHub, you can clone that loc
 
 If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
 
-## Clone and run locally
+## To run locally
+Make sure to have Node.js 20.10 or later Installed.
 
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
-
-2. Create a Next.js app using the Supabase Starter template npx command
-
-   ```bash
-   npx create-next-app -e with-supabase
-   ```
-
-3. Use `cd` to change into the app's directory
+1. Clone the project
 
    ```bash
-   cd name-of-new-app
+   git clone https://github.com/Dennisonung/anji-backend
    ```
 
-4. Rename `.env.local.example` to `.env.local` and update the following:
+2. At the root of the project, download the required dependences 
 
+   ```bash
+   npm install
    ```
-   NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=[INSERT SUPABASE PROJECT API ANON KEY]
-   ```
 
-   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` can be found in [your Supabase project's API settings](https://app.supabase.com/project/_/settings/api)
+3. Download the .env.local somewhere privately somewhere and drop it into the root of the project
 
-5. You can now run the Next.js local development server:
+4. You can now run the Next.js local development server:
 
    ```bash
    npm run dev
    ```
 
    The starter kit should now be running on [localhost:3000](http://localhost:3000/).
-
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
-
-## Feedback and issues
-
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
-
-## More Supabase examples
-
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
