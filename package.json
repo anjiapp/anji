@@ -5,6 +5,7 @@
     "build": "next build",
     "start": "next start"
   },
+  "type":"module",
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
     "@supabase/auth-ui-react": "^0.4.7",
@@ -27,4 +28,6 @@
     "@types/react-dom": "18.2.18",
     "encoding": "^0.1.13"
   }
+
+
 }
