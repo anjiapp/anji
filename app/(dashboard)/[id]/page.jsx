@@ -1,4 +1,4 @@
-import ModalChildren from "@/components/ModalChildren";
+import CardChildren from "@/components/CardChildren";
 import {createClient} from "@/utils/supabase/server";
 import {cookies} from "next/headers";
 
@@ -17,9 +17,15 @@ export default async function StudyPage({params, searchParams}) {
         return <div>error</div>
     }
     return (
-        <div className={'relative flex flex-col w-full h-full bg-[#d9d9d9] items-center'}>
-            <h2 className={"bg-white self-start w-full py-4 px-7"}>{deck.title}</h2>
-            <ModalChildren deck={deck.cards} />
-        </div>
-    );
+		<div
+			className={
+				"relative flex flex-col w-full h-full bg-[#d9d9d9] items-center"
+			}
+		>
+			<h2 className={"bg-white self-start w-full py-4 px-7"}>
+				{deck.title}
+			</h2>
+			<CardChildren deck={deck.cards} />
+		</div>
+	);
 }

@@ -16,7 +16,7 @@ const buttonStyle = {
 
 const supabase = createClient();
 
-const ModalChildren = ({ deck }) => {
+const CardChildren = ({ deck }) => {
 	const [index, setIndex] = React.useState(0);
 	const [onFront, setOnFront] = React.useState(true);
 	const handleCardClick = async (button) => {
@@ -102,4 +102,4 @@ const ModalChildren = ({ deck }) => {
 		</>
 	);
 };
-export default ModalChildren;
+export default CardChildren;

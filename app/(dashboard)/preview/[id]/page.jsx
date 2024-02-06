@@ -1,31 +1,55 @@
-import "@/css/CardModal.css";
+import CardChildren from "@/components/CardChildren";
+import { createClient } from "@/utils/supabase/server";
+import { cookies } from "next/headers";
 import Link from "next/link";
-import { MdOutlineClose } from "react-icons/md";
+import "@/css/CardModal.css";
 
 const boxes = [];
-export default function CardModal({deck}) {
+export default async function StudyPage({ params, searchParams }) {
 	if (boxes.length === 0) {
 		for (let i = 0; i < 28; i++) {
 			boxes.push(Math.floor(Math.random() * 100));
 		}
 	}
+	const supabase = createClient(cookies());
+	const { data: deck, error: deck_error } = await supabase
+		.schema("user_data")
+		.from("decks")
+		.select(
+			"title, cards(id, scheduled_date, card_state, difficulty, stability, retrievability, answer, question)"
+		)
+		.eq("deck_id", params.id)
+		.single();
+	if (deck_error) {
+		console.log(deck_error);
+		return <div>error</div>;
+	}
 	return (
-		<>
-			<Link className={"blanket cursor-default"} href="?" />
-			<div className={"card-modal"}>
+		<div
+			className={
+				"relative flex flex-col w-full h-full bg-[#d9d9d9] items-center"
+			}
+		>
+			<h2 className={"bg-white self-start w-full py-4 px-7"}>
+				{deck.title}
+			</h2>
+			<div className="card-modal">
 				<div className={"card-info space-y-2"}>
 					<div
 						className={"flex flex-row justify-between items-center"}
 					>
 						<h1>{deck.title}</h1>
-						<Link href={"?"} className={"hover:cursor-pointer"}>
-							<MdOutlineClose
-								size={40}
-								className={
-									"close-button hover:cursor-pointer h-full"
-								}
-							/>
-						</Link>
+						{/* <button
+						onClick={router.back}
+						className={"hover:cursor-pointer"}
+					>
+						<MdOutlineClose
+							size={40}
+							className={
+								"close-button hover:cursor-pointer h-full"
+							}
+						/>
+					</button> */}
 					</div>
 					<div className={"deck-stats-container space-x-5"}>
 						<div className={"deck-stats-text-container"}>
@@ -59,7 +83,7 @@ export default function CardModal({deck}) {
 						</div>
 						<Link
 							href={{
-								pathname: `/${deck.deck_id}`,
+								pathname: `/${params.id}`,
 							}}
 							className={"study-button"}
 						>
@@ -68,6 +92,6 @@ export default function CardModal({deck}) {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }

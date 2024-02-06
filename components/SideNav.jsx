@@ -73,8 +73,9 @@ export default function SideNav(props) {
 				return (
 					<Link
 						key={i}
-						href={"/dashboard?deck_id=" + deck.deck_id}
+						href={`/preview/${deck.deck_id}`}
 						className={"flex flex-col pl-7"}
+						passHref
 					>
 						<text className={"truncate"}>{deck.title}</text>
 					</Link>
