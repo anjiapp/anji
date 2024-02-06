@@ -7,7 +7,6 @@ import { createClient } from "@/utils/supabase/client";
 import { useRouter, useParams } from "next/navigation";
 import "@/css/CardModal.css";
 import { useEffect, useState } from "react";
-import { get } from "http";
 
 let boxes = [];
 const supabase = createClient();
@@ -40,7 +39,7 @@ export default function Page({}) {
 		getDeck().then((deck) => setDeck(deck));	
 		console.log(params.id, deck);
 
-		setLoading(deck ? false : true);
+		setLoading(!deck);
 	}, []);
 
 	if (loading) {

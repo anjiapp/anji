@@ -1,5 +1,4 @@
 import '@/css/globals.css'
-import Link from "next/link";
 import TopNav from "@/components/TopNav";
 
 export const metadata = {

@@ -1,4 +1,3 @@
-import CardChildren from "@/components/CardChildren";
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
 import Link from "next/link";

@@ -1,6 +1,4 @@
 import PinnedCard from "@/components/PinnedCard";
-import { createClient } from "@/utils/supabase/server";
-import { cookies } from "next/headers";
 
 export default async function PinnedCards({ pinned_decks }) {
 	return (

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import {FaChevronDown, FaChevronRight, FaEllipsis, FaFolder, FaPlus} from "react-icons/fa6";
 
 export default function TopNav() {
     return (
