@@ -19,7 +19,7 @@ export default async function Dashboard({ params, searchParams }) {
 	}
 
 	return (
-		<div className={"flex w-full justify-center mt-10"}>
+		<div className={"flex w-full justify-center h-screen pt-10"}>
 			<div className={"w-[80%] space-y-3"}>
 				<div className={"flex justify-between"}>
 					<div>

@@ -19,7 +19,7 @@ export default async function StudyPage({params, searchParams}) {
     return (
 		<div
 			className={
-				"relative flex flex-col w-full h-full bg-[#d9d9d9] items-center"
+				"relative flex w-full h-screen bg-[#d9d9d9] justify-center items-center"
 			}
 		>
 			<h2 className={"bg-white self-start w-full py-4 px-7"}>
