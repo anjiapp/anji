@@ -35,9 +35,9 @@ const CardChildren = ({ deck }) => {
 				.update({
 					difficulty: res.newDifficulty,
 					stability: res.newStability,
-					scheduled_date: res.nextReviewDate,
+					scheduled_date: res.nextReviewDate.toISOString(),
 					retrievability: res.newRetrievability,
-					last_reviewed: Date.now(),
+					last_reviewed: new Date().toISOString(),
 				})
 				.eq("id", deck[index].id);
 			if (error) {
