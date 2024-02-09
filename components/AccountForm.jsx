@@ -22,7 +22,7 @@ export default function AccountForm({user}) {
         } finally {
             setLoading(false)
         }
-    }, [user, supabase])
+    }, [user])
 
     useEffect(() => {
         getProfile()
