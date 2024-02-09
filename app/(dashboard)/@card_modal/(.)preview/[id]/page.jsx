@@ -39,7 +39,7 @@ export default function Page({}) {
 
 	return (
 		<Modal>
-			<PreviewCard deck={deck} isClient={true} router={useRouter()} />
+			<PreviewCard deck={deck} isClient={true} router={useRouter()} id={params.id} />
 		</Modal>
 	);
 }

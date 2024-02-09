@@ -7,7 +7,6 @@ export default async function Page({params, searchParams}) {
         data: deck,
         error: deckError
     } = await supabase.schema('user_data').from('decks').select('title, description, cards(question, answer)').eq('deck_id', params.id).single();
-    console.log(deck)
     if (deckError) {
         console.error(deckError);
         return <div>Failed to load deck</div>;
@@ -37,7 +36,7 @@ export default async function Page({params, searchParams}) {
                             <button>Create</button>
                         </div>
                     </form>
-                    <div className={'space-y-3 mt-5'}>
+                    <div className={'space-y-3 my-5'}>
                         {
                             deck.cards.map((card, index) => {
                                 return (
